@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -17,13 +19,12 @@ public class FrequenciaController {
     @PostMapping("/cadastrar")
     @ResponseStatus(HttpStatus.CREATED)
     public List<Frequencia> CadastrarFrequencia(@RequestBody List<Frequencia> frequencias){
+        Date hoje = new Date();
         frequencias.forEach(frequencia -> {
             Frequencia novaFrequencia = frequencia;
+            novaFrequencia.setDia(hoje);
             frequenciaService.cadastrar(frequencia);
         });
         return frequencias;
     }
-
-
-
 }

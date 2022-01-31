@@ -18,6 +18,8 @@ public class Aluno {
 
     private String  nome;
 
-    private Long    turma;
+    private int telefone;
+
+    private int idade;
 
 }

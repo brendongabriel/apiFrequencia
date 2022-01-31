@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 
 @Entity
@@ -19,7 +20,7 @@ public class Frequencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_frequencia;
-    private LocalDate dia;
+    private Date dia;
     private long aluno;
     private boolean frequencia;
 

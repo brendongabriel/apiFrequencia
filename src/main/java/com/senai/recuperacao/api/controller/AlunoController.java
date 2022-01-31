@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/aluno")
 @AllArgsConstructor
@@ -17,6 +19,11 @@ public class AlunoController {
     public Aluno cadastrar(@RequestBody Aluno aluno){
         Aluno novoAluno = alunoService.cadastrar(aluno);
         return novoAluno;
+    }
+
+    @GetMapping("/listar")
+    public List<Aluno> listar(){
+        return alunoService.listar();
     }
 
 
