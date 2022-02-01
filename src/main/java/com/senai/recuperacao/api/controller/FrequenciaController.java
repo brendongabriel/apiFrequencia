@@ -24,4 +24,9 @@ public class FrequenciaController {
         });
         return frequencias;
     }
+
+    @GetMapping("/listar")
+    public List<Frequencia> Listar(){
+        return frequenciaService.listar();
+    }
 }
