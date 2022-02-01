@@ -19,10 +19,7 @@ public class FrequenciaController {
     @PostMapping("/cadastrar")
     @ResponseStatus(HttpStatus.CREATED)
     public List<Frequencia> CadastrarFrequencia(@RequestBody List<Frequencia> frequencias){
-        Date hoje = new Date();
         frequencias.forEach(frequencia -> {
-            Frequencia novaFrequencia = frequencia;
-            novaFrequencia.setDia(hoje);
             frequenciaService.cadastrar(frequencia);
         });
         return frequencias;

@@ -22,4 +22,19 @@ public class AlunoService {
         return alunoRepository.findAll();
     }
 
+    public void remover(Long n_Matricula){
+        alunoRepository.deleteById(n_Matricula);
+    }
+
+    public Aluno buscar(Long n_Matricula) {
+        return alunoRepository.findById(n_Matricula).orElseThrow();
+    }
+
+    public Aluno editar(Long n_Matricula, Aluno aluno){
+        Aluno newAluno = aluno;
+        newAluno.setN_Matricula(n_Matricula);
+        return alunoRepository.save(newAluno);
+    }
+
+
 }

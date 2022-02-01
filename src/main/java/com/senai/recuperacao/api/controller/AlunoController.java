@@ -26,5 +26,19 @@ public class AlunoController {
         return alunoService.listar();
     }
 
+    @DeleteMapping("/delete/{n_Matricula}")
+    public void delete(@PathVariable Long n_Matricula){
+         alunoService.remover(n_Matricula);
+    }
+
+    @GetMapping("/buscar/{n_Matricula}")
+    public Aluno buscar(@PathVariable Long n_Matricula){
+        return alunoService.buscar(n_Matricula);
+    }
+
+    @PutMapping("/editar/{n_Matricula}")
+    public Aluno editar(@PathVariable Long n_Matricula,@RequestBody Aluno aluno ){
+        return alunoService.editar(n_Matricula,aluno);
+    }
 
 }
