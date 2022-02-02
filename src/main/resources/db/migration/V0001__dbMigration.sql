@@ -17,6 +17,4 @@ CREATE TABLE frequencia (
 
 );
 
-ALTER TABLE frequencia ADD CONSTRAINT fk_alunos_frequencia
-FOREIGN KEY (aluno) REFERENCES alunos (n_Matricula);
 
